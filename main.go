@@ -202,6 +202,19 @@ var templateTersortir []templateDenganPanjang
 // --- Reusable HTTP client ---
 var httpClientGemini *http.Client // untuk panggilan KoboLLM API
 
+
+func startHealthCheckServer() {
+    port := os.Getenv("PORT")
+    if port == "" {
+        port = "8080"
+    }
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        w.WriteHeader(http.StatusOK)
+        w.Write([]byte("Bot is running"))
+    })
+    go http.ListenAndServe(":"+port, nil)
+}
+
 // =============================================================================
 //  INIT — Pre-sort template, init HTTP clients
 // =============================================================================
@@ -2131,6 +2144,7 @@ func sendReply(to types.JID, text string) {
 // =============================================================================
 
 func main() {
+	startHealthCheckServer()
 	fmt.Println("╔══════════════════════════════════════════╗")
 	fmt.Println("║     WhatsApp Bot — KADENA AI BOT         ║")
 	fmt.Println("║     v2.0 (Memory + Guest Context)        ║")
