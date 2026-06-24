@@ -1293,6 +1293,12 @@ STATUS:
 ✅ SUMBER FAKTA UTAMA
 ✅ PRIORITAS TERTINGGI
 
+pengiriman link (url)
+- Jangan gunakan format Markdown seperti [teks](url). 
+- Kirim URL langsung tanpa formatting apapun.
+- Contoh benar: https://maps.app.goo.gl/xxx
+- Contoh salah: [https://maps.app.goo.gl/xxx](https://maps.app.goo.gl/xxx)
+
 PENTING:
 Informasi di bawah berasal dari database resmi hotel.
 
