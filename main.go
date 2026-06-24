@@ -357,7 +357,7 @@ func generateBookingURL() string {
     checkOut := now.AddDate(0, 0, 1).Format("2006-01-02")
     
     // Ambil base URL dari environment variable atau gunakan default fallback
-    baseURL := getEnv("BOOKING_URL_BASE", "https://www.tiket.com/id-id/hotel/indonesia/kadena-glamping-dive-resort-410001635521096877")
+    baseURL := getEnv("BOOKING_URL_BASE", "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena")
 
     // Masukkan baseURL ke dalam format string
     return fmt.Sprintf(
@@ -874,7 +874,7 @@ func forceOwnerBot(nomorWA string, chatJID types.JID) {
 	}
 
 	sendReply(chatJID,
-		"Terima kasih telah menghubungi Kadena Glamping Dive Resort. "+
+		"Terima kasih telah menghubungi Aryan By Kadena. "+
 			"Apabila masih ada yang ingin ditanyakan, kami siap membantu kapan saja. 😊✨")
 }
 
@@ -1252,7 +1252,7 @@ func tanyaGeminiAI(sesi *SesiChat, pesanUser, nomorWA, modelName, extraContext s
 		}
 	}
 	if profil.StatusVIP {
-		personalizationHint += " Tamu ini adalah tamu VIP Kadena Glamping Dive Resort — berikan sapaan dan layanan yang lebih istimewa."
+		personalizationHint += " Tamu ini adalah tamu VIP  Aryan By Kadena — berikan sapaan dan layanan yang lebih istimewa."
 	}
 
 	// Cari di knowledge base lokal dulu (prioritas tertinggi, hemat token)
@@ -1281,7 +1281,7 @@ default:
 }
 infoWaktu := fmt.Sprintf("🕐 WAKTU SEKARANG: %s WIB. Sapaan waktu yang WAJIB digunakan saat ini adalah \"%s\". JANGAN gunakan sapaan waktu lain.",
     jamWIB.Format("15:04"), sapaanWaktu)
-	systemPrompt := fmt.Sprintf(`Kamu adalah resepsionis virtual  Kadena Glamping Dive Resort.
+	systemPrompt := fmt.Sprintf(`Kamu adalah resepsionis virtual  Aryan By Kadena.
 	%s
 Tugasmu membalas pesan pelanggan dengan ramah, sopan, dan profesional sesuai standar hotel bintang 4-5. 
 Panggil tamu dengan "%s". Gunakan bahasa yang formal namun tetap hangat.
@@ -1325,27 +1325,11 @@ Jika informasi di bawah sudah cukup menjawab pertanyaan pelanggan, MAKA:
 ===== AKHIR DATA RESMI =====
 
 PRIORITAS 2 — URL HALAMAN HOTEL (jika KB lokal tidak cukup):
-- Halaman utama   → https://kadenaglampingdiveresort.com/home/
-- Semua kamar     → https://kadenaglampingdiveresort.com/room/
-- Fasilitas hotel → https://kadenaglampingdiveresort.com/home/
-- Paket           → https://kadenaglampingdiveresort.com/home/
-- Meeting & Event → https://kadenaglampingdiveresort.com/service/conference-room/
-
-Promotion Deals dibagi menjadi 4 paket
-- Opening Rates → https://kadenaglampingdiveresort.com/curabitur-a-lectus/
-- Early Bird Promotion → https://kadenaglampingdiveresort.com/sed-ornare-porta/
-- F&B Promotion → https://kadenaglampingdiveresort.com/donec-faucibus/
-- CHEF RECOMENDED → https://kadenaglampingdiveresort.com/suspendisse-potenti/
-
-Fasilitas hotel atau Glamping ada beberapa pilihan seperti:
-- Dive Center & Water Sport → https://kadenaglampingdiveresort.com/service/spa-beauty-health/
-- Meeting & Event → https://kadenaglampingdiveresort.com/service/conference-room/
-- Dining → https://kadenaglampingdiveresort.com/service/restaurant/
-- Swimming Pool → https://kadenaglampingdiveresort.com/service/swimming-pool/
+- Halaman utama   → https://aryanbykadena.com/
 
 
 PANDUAN GOOGLE SEARCH (gunakan jika KB lokal & URL di atas tidak cukup):
-Gunakan query: "Kadena Glamping Dive Resort [topik yang ditanyakan]"
+Gunakan query: "Aryan By Kadena [topik yang ditanyakan]"
 
 PRIORITAS 3 — DATA CADANGAN (%s):
 %s
@@ -1375,7 +1359,7 @@ ATURAN MENJAWAB:
    - TUNGGU RESPON: Jika pelanggan membalas "Ya", "Lanjut", atau eksplisit minta detail, BARULAH pada balasan LANJUTAN ini berikan sisa informasi secara rinci dan lengkap sesuai data di Knowledge Base (di sinilah aturan "pertahankan seluruh fakta" di poin 1 berlaku penuh).
 4. Gunakan emoji secukupnya agar terasa ramah.
 5. ANALISIS topik pertanyaan pelanggan dan PROAKTIF berikan info relevan:
-   - Tentang booking/reservasi unit glamping → sertakan link booking berikut → https://www.tiket.com/id-id/hotel/indonesia/kadena-glamping-dive-resort-410001635521096877.
+   - Tentang booking/reservasi unit glamping → sertakan link booking berikut → https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena.
    - Tentang Promotion Deals → coba jawab, jika tidak bisa berikan rekomendasi ke empat Promotion Deals beserta linknya.
    - Tentang fasilitas hotel atau galmping → jawab sesui fasilitas yang ada dan bila cutomer meminta detail coba jawab jika tidak bisa berikan link fasilitas sesuai fasilitas yang ditannyakan customer.
 6. Jika kamu bisa menjawab sebagian tapi butuh eskalasi, JAWAB DULU lalu sertakan kontak yang relevan.
@@ -1692,36 +1676,36 @@ func jawabanTemplate(perintah string, msg *events.Message, profil *ProfilTamu) s
     case "assalamualaikum", "assalamu alaikum", "assalamu'alaikum":
         return "__HINT__:Tamu mengucapkan salam Islam 'Assalamu'alaikum'. " +
             "WAJIB awali balasan dengan 'Wa'alaikumsalam Warahmatullahi Wabarakatuh 🌙', " +
-            "lalu sambut tamu dengan hangat sebagai resepsionis Kadena Glamping Dive Resort dan tanya ada yang bisa dibantu."
+            "lalu sambut tamu dengan hangat sebagai resepsionis Aryan By Kadena dan tanya ada yang bisa dibantu."
 
     case "waalaikumsalam", "wa alaikumsalam", "wa'alaikumsalam":
         return "__HINT__:Tamu membalas salam Islam. " +
-            "Sambut dengan hangat dan lanjutkan percakapan sebagai resepsionis Kadena Glamping Dive Resort."
+            "Sambut dengan hangat dan lanjutkan percakapan sebagai resepsionis Aryan By Kadena."
 
     case "om swastiastu":
         return "__HINT__:Tamu mengucapkan salam Hindu 'Om Swastiastu'. " +
             "WAJIB awali balasan dengan 'Om Swastiastu 🙏', " +
-            "lalu sambut tamu dengan hangat sebagai resepsionis Kadena Glamping Dive Resort dan tanya ada yang bisa dibantu."
+            "lalu sambut tamu dengan hangat sebagai resepsionis Aryan By Kadena dan tanya ada yang bisa dibantu."
 
     case "shalom":
         return "__HINT__:Tamu mengucapkan salam Kristiani/Yahudi 'Shalom'. " +
             "WAJIB awali balasan dengan 'Shalom 🙏', " +
-            "lalu sambut tamu dengan hangat sebagai resepsionis Kadena Glamping Dive Resort dan tanya ada yang bisa dibantu."
+            "lalu sambut tamu dengan hangat sebagai resepsionis Aryan By Kadena Resort dan tanya ada yang bisa dibantu."
 
     case "namo buddhaya":
         return "__HINT__:Tamu mengucapkan salam Buddhis 'Namo Buddhaya'. " +
             "WAJIB awali balasan dengan 'Namo Buddhaya 🙏', " +
-            "lalu sambut tamu dengan hangat sebagai resepsionis Kadena Glamping Dive Resort dan tanya ada yang bisa dibantu."
+            "lalu sambut tamu dengan hangat sebagai resepsionis Aryan By Kadena dan tanya ada yang bisa dibantu."
 
     case "rahayu":
         return "__HINT__:Tamu mengucapkan salam 'Rahayu'. " +
             "WAJIB awali balasan dengan 'Rahayu 🙏', " +
-            "lalu sambut tamu dengan hangat sebagai resepsionis Kadena Glamping Dive Resort dan tanya ada yang bisa dibantu."
+            "lalu sambut tamu dengan hangat sebagai resepsionis Aryan By Kadena dan tanya ada yang bisa dibantu."
 
     case "salam sejahtera", "selamat sejahtera":
         return "__HINT__:Tamu mengucapkan salam lintas agama 'Salam Sejahtera'. " +
             "WAJIB awali balasan dengan 'Salam Sejahtera 🙏', " +
-            "lalu sambut tamu dengan hangat sebagai resepsionis Kadena Glamping Dive Resort dan tanya ada yang bisa dibantu."
+            "lalu sambut tamu dengan hangat sebagai resepsionis Aryan By Kadena dan tanya ada yang bisa dibantu."
 
     case "ping":
         return "pong"
@@ -1755,7 +1739,7 @@ func jawabanTemplate(perintah string, msg *events.Message, profil *ProfilTamu) s
             "📞 https://wa.me/" + KontakReservasi
 
     case "saya mau sewa kamar", "saya mau sewa kamar min", "ada kamar apa saja", "ada tipe kamar apa saja":
-        return "Boleh " + namaPanggil + " 😊\nBerikut tipe kamar yang tersedia di Kadena Glamping Dive Resort:\n\n" +
+        return "Boleh " + namaPanggil + " 😊\nBerikut tipe kamar yang tersedia di Aryan By Kadena:\n\n" +
             "• Glamping Superior\n" +
             "• Glamping Deluxe\n" +
             "• Glamping Suite\n" +
@@ -1763,7 +1747,7 @@ func jawabanTemplate(perintah string, msg *events.Message, profil *ProfilTamu) s
             "Atau langsung booking di sini: 🔗 " + generateBookingURL()
 
     case "halo admin", "hai", "hi", "p", "min", "mas", "mba", "bu", "pak", "kak":
-        return "Selamat datang di Kadena Glamping Dive Resort, " + namaPanggil + ". Ada yang bisa kami bantu? 😊"
+        return "Selamat datang di Aryan By Kadena, " + namaPanggil + ". Ada yang bisa kami bantu? 😊"
 
     case "hello", "hi there":
         // English — gunakan rawNama tanpa prefix Indonesia
@@ -1771,7 +1755,7 @@ func jawabanTemplate(perintah string, msg *events.Message, profil *ProfilTamu) s
         if rawDisplay == "" {
             rawDisplay = "there"
         }
-        return "Welcome to Kadena Glamping Dive Resort, " + rawDisplay + "! How can I help you today? 😊"
+        return "Welcome to Aryan By Kadena, " + rawDisplay + "! How can I help you today? 😊"
 
     	case "good morning", "good afternoon", "good evening", "good night":
 	
@@ -1816,7 +1800,7 @@ func jawabanTemplate(perintah string, msg *events.Message, profil *ProfilTamu) s
 
         // Personalisasi untuk tamu repeat/VIP
         if profil.KunjunganKe > 1 {
-            return sapaan + "! Senang melihat " + namaPanggil + " kembali di Kadena Dive Resort! 😊\n" +
+            return sapaan + "! Senang melihat " + namaPanggil + " kembali di Aryan By Kadena! 😊\n" +
                 "Seperti kunjungan sebelumnya, ada yang bisa kami bantu mengenai reservasi kamar, " +
                 "ruang meeting, atau event? ✨"
         }
@@ -2005,7 +1989,7 @@ func handleMessage(msg *events.Message) {
 	profilTamuMutex.Unlock()
 
 	if profil.KunjunganKe == 0 {
-    sapaanPerdana := "Hai! Perkenalkan saya Dena, asisten virtual dari Kadena Glamping Dive Resort. Ada yang bisa Dena bantu untuk rencana liburan Anda?"
+    sapaanPerdana := "Hai! Perkenalkan saya Dena, asisten virtual dari Aryan By Kadena. Ada yang bisa Dena bantu untuk rencana liburan Anda?"
     
     // Naikkan status kunjungan agar interaksi berikutnya langsung masuk ke NLP/LLM
     _ = incrementKunjungan(nomorWA)
@@ -2146,7 +2130,7 @@ func sendReply(to types.JID, text string) {
 func main() {
 	startHealthCheckServer()
 	fmt.Println("╔══════════════════════════════════════════╗")
-	fmt.Println("║     WhatsApp Bot — KADENA AI BOT         ║")
+	fmt.Println("║     WhatsApp Bot — Aryan By Kadena AI BOT║")
 	fmt.Println("║     v2.0 (Memory + Guest Context)        ║")
 	fmt.Println("╚══════════════════════════════════════════╝")
 	fmt.Println()

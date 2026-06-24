@@ -22,10 +22,7 @@ var daftarTabel = []string{
     "kb_qna",
     "kb_kamar",
     "kb_fasilitas",
-    "kb_dining",            
-    "kb_dive_watersport",
-	"kb_meeting_event",
-	"kb_swimming_pool",
+	"contact_us",
 }
 
 // kategoriKeywords memetakan tabel → kata kunci pemicu pencarian
@@ -47,28 +44,10 @@ var kategoriKeywords = map[string][]string{
 		"live music", "parkir", "parking", "keamanan", "security", 
 		"taman", "garden", "towel", "handuk",
 	},
-	"kb_dining": {
-		"dining", "makan", "restoran", "restaurant", "resto", "bar", 
-		"lounge", "k resto", "menu", "sarapan", "breakfast", "lunch", 
-		"dinner", "makan malam", "cocktail", "teh", "afternoon tea", 
-		"kuliner", "halal", "seafood", "minuman", "chef",
-	},
-	"kb_dive_watersport": {
-		"dive", "diving", "snorkeling", "selam", "watersport", 
-		"water sport", "olahraga air", "perahu", "boat", "sewa alat", 
-		"masker", "fin", "kaki katak", "tabung", "instruktur", "guide", 
-		"sertifikasi", "padi", "terumbu karang", "coral", "spot",
-	},
-	"kb_meeting_event": {
-		"meeting", "event", "rapat", "pertemuan", "convention", 
-		"wedding", "pernikahan", "social event", "acara", "gathering", 
-		"aula", "ballroom", "ruangan", "kapasitas", "indoor", "outdoor", 
-		"paket nikah", "catering", "sound system", "proyektor",
-	},
-	"kb_swimming_pool": {
-		"kolam", "renang", "pool", "swimming", "infinity pool", 
-		"sunset", "berenang", "kedalaman", "kursi jemur", "lounger", 
-		"tepi kolam", "poolside",
+	"contact_us": {
+		"hubungi kami", "telepon", "whatsapp", "email", "lokasi", 
+    	"alamat", "instagram", "bantuan", "support", "call center", 
+    	"reservasi",
 	},
 }
 
