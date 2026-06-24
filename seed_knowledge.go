@@ -72,11 +72,13 @@ func seedUmum() {
             konten:   `Aryan by Kadena beralamat di Blue Ring East Biluhu Beach, Provinsi Gorontalo. Untuk informasi lebih lanjut, hubungi +62 852 1111 5115 atau email info@aryanbykadena.com.`,
             kataKunci: "lokasi,kontak,alamat,Gorontalo,telepon,email",
         },
+       
+
         {
-            judul: "Google Maps",
-            konten: `- https://maps.app.goo.gl/YU7KZrznS4zUfarG8.`,
-            kataKunci: "alamat,koordinat,lokasi,dimana,di mana,address,google maps",
-        },
+    judul: "Google Maps",
+    konten: `- Link lokasi kami: https://maps.app.goo.gl/YU7KZrznS4zUfarG8`,
+    kataKunci: "alamat,koordinat,lokasi,dimana,di mana,address,google maps",
+       },
 
 		// Tambahkan entri kb_umum lainnya di sini...
 	}
