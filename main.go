@@ -358,12 +358,8 @@ func generateBookingURL() string {
     
     // Ambil base URL dari environment variable atau gunakan default fallback
     baseURL := getEnv("BOOKING_URL_BASE", "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena")
+	return "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena"
 
-    // Masukkan baseURL ke dalam format string
-    return fmt.Sprintf(
-        "%s?propertyId=%s&checkIn=%s&checkOut=%s&clientWidth=1351&JDRN=Y&RoomID=%s&noofrooms=1&adult0=2&gsId=%s",
-        baseURL, BookingPropertyID, checkIn, checkOut, BookingRoomIDs, BookingGsID,
-    )
 }
 
 // pesanHubungiDepartemen mengembalikan pesan arahan ke departemen yang tepat.
