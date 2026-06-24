@@ -349,16 +349,8 @@ func geminiAPIKey() string {
 	return AppConfig.GeminiAPIKey
 }
 
-// generateBookingURL membuat URL booking Swiftbook dengan tanggal check-in hari ini
-// dan check-out besok secara otomatis.
 func generateBookingURL() string {
-    now := time.Now()
-    checkIn := now.Format("2006-01-02")
-    checkOut := now.AddDate(0, 0, 1).Format("2006-01-02")
-    
-    // Ambil base URL dari environment variable atau gunakan default fallback
-    baseURL := getEnv("BOOKING_URL_BASE", "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena")
-
+    return "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena"
 }
 
 // pesanHubungiDepartemen mengembalikan pesan arahan ke departemen yang tepat.
