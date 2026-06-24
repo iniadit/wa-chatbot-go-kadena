@@ -358,7 +358,6 @@ func generateBookingURL() string {
     
     // Ambil base URL dari environment variable atau gunakan default fallback
     baseURL := getEnv("BOOKING_URL_BASE", "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena")
-	return "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena"
 
 }
 

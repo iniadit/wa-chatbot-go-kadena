@@ -79,7 +79,7 @@ Check-in: Mulai pukul 14:00 WIB 2:00 PM hingga 23:59 WIB
 Check-out: Sebelum pukul 12:00 WIB 12:00 PM`),
 
 		BookingURLBase: getEnv("BOOKING_URL_BASE", "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena"),
-
+						
 		KontakReservasi: getEnv("KONTAK_RESERVASI", "6285211115115"),
 		KontakSales:     getEnv("KONTAK_SALES", "6285211115115"),
 		KontakFO:        getEnv("KONTAK_FO", "6285211115115"),
