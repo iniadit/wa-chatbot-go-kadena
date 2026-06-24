@@ -153,14 +153,101 @@ Fasilitas Kamar & Hotel:
 	}
 }
 
-
-
 // =============================================================================
 //  kb_fasilitas — Fasilitas umum hotel
 //  Cocok untuk: restoran, kolam renang, gym, spa, shuttle, laundry, dll.
 // =============================================================================
 
 func seedFasilitas() {
+    data := []struct{ judul, konten, kataKunci string }{
+            {
+            judul: "Dive Center & Water Sport",
+            konten: `Deskripsi Lengkap:
+Pusat penyelaman dan olahraga air lengkap untuk tamu yang ingin mengeksplorasi keindahan bawah laut Gorontalo, termasuk peluang berinteraksi dengan hiu paus. Tersedia berbagai aktivitas air yang dapat dinikmati selama menginap di resort.
+
+Detail Fasilitas:
+- Dive Center dengan peralatan lengkap
+- Jetty untuk akses diving
+- Water Sport activities (jetski, snorkeling, diving)
+- Akses langsung ke area pantai
+- Paket wisata dan trip diving tersedia
+
+Cocok untuk:
+Menyelam (diving), snorkeling, aktivitas air, eksplorasi bawah laut, recreational diving, olahraga air, dan fotografi dengan hiu paus.`,
+            kataKunci: "dive center,water sport,menyelam,snorkeling,aktivitas air,bawah laut,diving,resort,beach,Gorontalo,jetski,hiu paus",
+        },
+        {
+            judul: "Restoran & Bar",
+            konten: `Deskripsi Lengkap:
+Restoran dengan pemandangan laut yang menyajikan hidangan lokal dan internasional. Tersedia untuk sarapan, makan siang, dan makan malam, serta dapat digunakan untuk acara spesial seperti iftar Ramadan.
+
+Detail Fasilitas:
+- Restoran dengan pemandangan laut
+- Menu lokal dan internasional
+- Buffet dan a la carte tersedia
+- Area Indoor & Outdoor
+- Bar tersedia
+- Live music setiap akhir pekan
+- Dapat digunakan untuk acara privat (hingga 60 orang)
+
+Cocok untuk:
+Bersantap dengan keluarga, romantic dinner, acara sosial, iftar Ramadan, dan menikmati sunset sambil bersantap.`,
+            kataKunci: "restoran,bar,dining,makan,seafood,lokal,pemandangan laut,iftar,live music,acara sosial",
+        },
+        {
+            judul: "Kamar & Villa",
+            konten: `Deskripsi Lengkap:
+Resort menawarkan total 15-17 kamar/villa dengan berbagai tipe termasuk Family Room dan Deluxe Room. Semua kamar dilengkapi balkon pribadi dengan pemandangan laut atau taman.
+
+Detail Fasilitas:
+- 1 Family Room (52 m²)
+- 14 Deluxe Room (32 m²)
+- Balkon pribadi di semua kamar
+- Pemandangan laut atau taman
+- Tempat tidur gaya Hollywood (hingga 3 orang)
+- Shower air panas dan dingin
+- Guest amenities (perlengkapan mandi)
+- Free Wi-Fi
+
+Cocok untuk:
+Keluarga, pasangan, pelancong solo, dan kelompok kecil yang mencari kenyamanan dengan pemandangan alam.`,
+            kataKunci: "kamar,villa,deluxe,family room,balkon,pemandangan laut,tempat tidur,shower,wifi,amenities",
+        },
+        {
+            judul: "Fasilitas Umum & Layanan",
+            konten: `Deskripsi Lengkap:
+Berbagai fasilitas pendukung untuk kenyamanan tamu selama menginap, termasuk akses internet, parkir, dan layanan transportasi.
+
+Detail Fasilitas:
+- Free Wi-Fi di area publik
+- Free parking (parkir gratis)
+- Airport transfer (antar jemput bandara)
+- Pramutamu/pelayan
+- 24-jam security
+- Resepsionis
+- Area pantai pribadi (1 km)
+
+Cocok untuk:
+Kenyamanan umum, akses internet, parkir kendaraan, dan transportasi dari/ke bandara.`,
+            kataKunci: "wifi,parking,airport transfer,pramutamu,security,resepsionis,beach,pantai,layanan,fasilitas umum",
+        },
+
+		// Tambahkan entri kb_umum lainnya di sini...
+	}
+
+	for _, d := range data {
+		if err := TambahKnowledge("kb_umum", d.judul, d.konten, d.kataKunci); err != nil {
+			fmt.Printf("[SEED][ERROR] kb_umum '%s': %v\n", d.judul, err)
+		}
+	}
+}
+
+// =============================================================================
+//  kb_fasilitas — Fasilitas umum hotel
+//  Cocok untuk: restoran, kolam renang, gym, spa, shuttle, laundry, dll.
+// =============================================================================
+
+func seedContactUs() { 
     data := []struct{ judul, konten, kataKunci string }{
           {
             judul: "Lokasi & Kontak",

@@ -67,23 +67,23 @@ func LoadConfig() {
 		LiteLLMModelPro:      getEnv("LITE_LLM_MODEL_PRO", "gemini-2.5-pro"),
 
 		RoomURLMap: getEnv("ROOM_URL_MAP", `PETA URL TIPE KAMAR (gunakan URL yang sesuai dengan tipe kamar yang ditanyakan):
-- Glamping Superior    → https://kadenaglampingdiveresort.com/room/glamping-superior/
-- Glamping Deluxe      → https://kadenaglampingdiveresort.com/room/single-room/
-- Glamping Suite       → https://kadenaglampingdiveresort.com/room/junior-suite/`),
+- Glamping Suite       → https://aryanbykadena.com/`),
 
 		InfoHotelFallback: getEnv("INFO_HOTEL_FALLBACK", `Kadena Glamping dive Resort
-- Lokasi: Jl. Raya Anyer-Sirih, Kamasan, Kec. Cinangka, Kabupaten Serang, Banten 42167
-- Tipe Kamar: Glamping Superior, Glamping Deluxe, Glamping Suite 
-- Meeting & Event: Atur acara Anda bersama kami, 2 ruang pertemuan dalam ruangan kami dapat menampung hingga 200 orang dengan fasilitas pertemuan standar. Kami juga dapat menangani acara sosial luar ruangan Anda di taman atau di "K Resto & Lounge" terbuka kami dengan pemandangan laut yang menakjubkan
-- Fasilitas: Resor tepi pantai dengan 32 Glamping, Kolam Renang Infinity, Pusat Selam, Olahraga Air, Restoran & Bar, Taman Bermain Anak, Ruang Serbaguna, DJ dan Hiburan Langsung (Band) setiap Jumat & Sabtu pukul 16:00-22:00
-- Check-in: 14.00 WIB | Check-out: 12.00 WIB`),
+- Aryan by Kadena adalah resort tepi pantai yang terletak di Blue Ring East Biluhu Beach, Provinsi Gorontalo. Resort ini dirancang sebagai tempat berkumpul ideal untuk liburan panjang, perjalanan singkat, menyelam, snorkeling, olahraga air, bersantap lokal, dan acara sosial. Tamu dapat bersantai di restoran dengan pemandangan laut serta menikmati layanan khas resort.
+- Tipe Kamar: Deluxe Room, Family Room
+- Fasilitas: Dive Center & Water Sport Pusat penyelaman dan olahraga air lengkap untuk tamu yang ingin mengeksplorasi keindahan bawah laut Gorontalo, termasuk peluang berinteraksi dengan hiu paus. Tersedia berbagai aktivitas air yang dapat dinikmati selama menginap di resort,
+Restoran & Bar Restoran dengan pemandangan laut yang menyajikan hidangan lokal dan internasional. Tersedia untuk sarapan, makan siang, dan makan malam, serta dapat digunakan untuk acara spesial seperti iftar Ramadan.
+- Waktu Check-in & Check-out
+Check-in: Mulai pukul 14:00 WIB 2:00 PM hingga 23:59 WIB
+Check-out: Sebelum pukul 12:00 WIB 12:00 PM`),
 
-		BookingURLBase: getEnv("BOOKING_URL_BASE", "https://www.tiket.com/id-id/hotel/indonesia/kadena-glamping-dive-resort-410001635521096877"),
+		BookingURLBase: getEnv("BOOKING_URL_BASE", "https://bookingku.bookandlink.com/booking-page.php?id=aryan-by-kadena"),
 
-		KontakReservasi: getEnv("KONTAK_RESERVASI", "6281211493810"),
-		KontakSales:     getEnv("KONTAK_SALES", "6281211493810"),
-		KontakFO:        getEnv("KONTAK_FO", "6281211493810"),
-		KontakResto:     getEnv("KONTAK_RESTO", "6281211493810"),
+		KontakReservasi: getEnv("KONTAK_RESERVASI", "6285211115115"),
+		KontakSales:     getEnv("KONTAK_SALES", "6285211115115"),
+		KontakFO:        getEnv("KONTAK_FO", "6285211115115"),
+		KontakResto:     getEnv("KONTAK_RESTO", "6285211115115"),
 
 		HumanResponseTimeout: getEnvAsDuration("HUMAN_RESPONSE_TIMEOUT", 3*time.Minute),
 		SesiChatExpiry:       getEnvAsDuration("SESI_CHAT_EXPIRY", 24*time.Hour),
